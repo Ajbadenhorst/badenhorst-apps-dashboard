@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badenhorst's Apps Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600&display=swap">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23091113'/><circle cx='32' cy='32' r='20' stroke='%2300E6A8' stroke-width='3' fill='transparent'/></svg>">
+    <style>
+        :root{
+            --bg:#090f13; /* near-black */
+            --panel:#0f1620; /* slightly lighter panel */
+            --accent:#00E6A8; /* neon mint accent */
+            --muted:#9aa6b0; /* soft gray */
+            --glass: rgba(255,255,255,0.03);
+        }
+        html,body{height:100%;}
+        /* Keep content near the top rather than centered */
+        body{margin:0; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:var(--bg); color:var(--muted); display:flex; align-items:flex-start; justify-content:center; padding:32px 48px; min-height:100vh;}
+        /* Page container */
+        .wrap{width:100%; max-width:1000px;}
+        header{display:flex; align-items:center; gap:16px; margin-bottom:20px}
+        .brand{display:flex; align-items:center; gap:12px}
+        .brand .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg, rgba(0,230,168,0.08), rgba(0,230,168,0.02));display:flex;align-items:center;justify-content:center;box-shadow: 0 6px 18px rgba(0,0,0,0.6)}
+        .brand .mark svg{filter:drop-shadow(0 6px 12px rgba(0,230,168,0.08))}
+        h1{font-family:'Space Grotesk', 'Inter', sans-serif;color:var(--accent);font-weight:600;font-size:1.25rem;margin:0}
+        .subtitle{font-size:0.9rem;color:var(--muted);opacity:0.9}
+
+        .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px}
+        .section{margin-bottom:22px}
+        .section-title{color:#e6fef1;font-size:0.9rem;margin:0 0 10px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;opacity:0.95}
+        a{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03);text-decoration:none;color:var(--muted);box-shadow: 0 6px 20px rgba(2,6,23,0.6);transition:transform .16s ease, box-shadow .16s ease}
+        a:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(2,6,23,0.7)}
+        .tile-icon{width:56px;height:56px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;background:transparent}
+        .tile-title{font-weight:600;color:#e6fef1;margin:0;font-size:1rem}
+        .tile-sub{margin:6px 0 0;font-size:0.9rem;color:var(--muted);opacity:0.9}
+        /* Neon accent underline */
+        a::after{content:'';height:3px;width:56px;border-radius:2px;background:transparent;display:block;margin-top:12px;opacity:0;transition:opacity .18s ease, transform .18s ease}
+        a:hover::after{opacity:1;background:linear-gradient(90deg,var(--accent), rgba(0,230,168,0.6));transform:translateY(-2px)}
+        .wow-tile .sub-hover{display:none}
+        .wow-tile:hover .sub-default{display:none}
+        .wow-tile:hover .sub-hover{display:inline;color:var(--accent);font-weight:600}
+        @media (max-width:420px){body{padding:16px}.brand .mark{width:40px;height:40px}}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="mark" aria-hidden="true">
+                    <!-- subtle mark -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="9" stroke="rgba(0,230,168,0.12)" stroke-width="1.6"></circle>
+                        <path d="M8 12h8" stroke="rgba(0,230,168,0.22)" stroke-width="1.6" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1>The Badenhorst's Family Apps</h1>
+                    <div class="subtitle">Personal services and tools</div>
+                </div>
+            </div>
+        </header>
+        <section class="section">
+            <h2 class="section-title">Media</h2>
+            <div class="grid">
+                <a class="overseerr-tile" href="https://overs.badenhorstfamily.co.za">
+                    <span class="tile-icon" aria-hidden="true">
+                        <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                            <rect x="0.5" y="0.5" width="23" height="23" rx="6" stroke="rgba(0,230,168,0.06)"></rect>
+                            <path d="M8 7v10l8-5-8-5z" fill="none" stroke="url(#g)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"></path>
+                            <defs>
+                                <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#6FF5D0"></stop><stop offset="1" stop-color="#00E6A8"></stop></linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                    <div class="tile-title">Overseerr</div>
+                    <div class="tile-sub">Media Requests</div>
+                </a>
+                <a class="qb-tile" href="https://qb.badenhorstfamily.co.za">
+                    <span class="tile-icon" aria-hidden="true">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.5" y="1.5" width="21" height="21" rx="4" stroke="rgba(0,230,168,0.06)" stroke-width="1.2"></rect>
+                            <path d="M7 10v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-5" stroke="url(#q)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12 7v8" stroke="url(#q)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <defs>
+                                <linearGradient id="q" x1="0" x2="1"><stop offset="0" stop-color="#6FF5D0"></stop><stop offset="1" stop-color="#00E6A8"></stop></linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                    <div class="tile-title">qBittorrent</div>
+                    <div class="tile-sub">Torrent Client</div>
+                </a>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section-title">Apps</h2>
+            <div class="grid">
+                <a class="bank-tile" href="https://bank.badenhorstfamily.co.za">
+                    <span class="tile-icon" aria-hidden="true">
+                        <!-- simple bank icon -->
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2.5" y="6" width="19" height="3.5" rx="0.8" stroke="rgba(0,230,168,0.06)" stroke-width="1.2"></rect>
+                            <path d="M4 20h16M8 12v6M12 12v6M16 12v6" stroke="url(#b)" stroke-width="1.2" stroke-linecap="round"></path>
+                            <defs>
+                                <linearGradient id="b" x1="0" x2="1"><stop offset="0" stop-color="#6FF5D0"></stop><stop offset="1" stop-color="#00E6A8"></stop></linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                    <div class="tile-title">Bank App</div>
+                    <div class="tile-sub">Firebase Banking Tool</div>
+                </a>
+                <a class="wow-tile" href="https://albie-wow.badenhorstfamily.co.za/">
+                    <span class="tile-icon" aria-hidden="true">
+                        <!-- lightning bolt -->
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.5" y="1.5" width="21" height="21" rx="5" stroke="rgba(0,230,168,0.06)" stroke-width="1.2"></rect>
+                            <path d="M13 4 L7 13 L11 13 L9.5 20 L16 11 L12 11 Z" fill="none" stroke="url(#wow)" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"></path>
+                            <defs>
+                                <linearGradient id="wow" x1="0" x2="1"><stop offset="0" stop-color="#6FF5D0"></stop><stop offset="1" stop-color="#00E6A8"></stop></linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                    <div class="tile-title">Ways of Working</div>
+                    <div class="tile-sub"><span class="sub-default">My working style</span><span class="sub-hover">EarlyBird#777</span></div>
+                </a>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section-title">Utilities</h2>
+            <div class="grid">
+                <a class="ha-tile" href="https://allieha.tplinkdns.com/lovelace-voltronicn/0" aria-label="Home Assistant">
+                    <span class="tile-icon" aria-hidden="true">
+                        <!-- Minimal Home Assistant house icon with neon stroke -->
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 10.5L12 4l9 6.5" stroke="rgba(0,230,168,0.08)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M5 11v7a1 1 0 0 0 1 1h3v-5h4v5h3a1 1 0 0 0 1-1v-7" stroke="url(#ha)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                            <defs>
+                                <linearGradient id="ha" x1="0" x2="1"><stop offset="0" stop-color="#6FF5D0"></stop><stop offset="1" stop-color="#00E6A8"></stop></linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                    <div class="tile-title">Home Assistant</div>
+                    <div class="tile-sub">Smart Home Dashboard</div>
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
