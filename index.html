@@ -40,6 +40,7 @@
         .wow-tile .sub-hover{display:none}
         .wow-tile:hover .sub-default{display:none}
         .wow-tile:hover .sub-hover{display:inline;color:var(--accent);font-weight:600}
+        .note{margin:0 0 22px;padding:14px 16px;border-radius:12px;background:rgba(0,230,168,0.04);border:1px solid rgba(0,230,168,0.12);color:var(--muted);font-size:0.92rem;line-height:1.5}
         @media (max-width:420px){body{padding:16px}.brand .mark{width:40px;height:40px}}
     </style>
 </head>
@@ -60,6 +61,7 @@
                 </div>
             </div>
         </header>
+        <p class="note">Home Assistant, Overseerr, and qBittorrent open through Cloudflare Tunnel on the Acer Aspire (ab-aspire-e1-571, 192.168.10.70). The laptop has to be on the home Wi-Fi and awake. Home Assistant is the VirtualBox VM on that laptop. Overseerr and qBittorrent run on the Ryzen PC at 192.168.10.213. The tiles use the public names. A signed-out visit stops at the family Cloudflare Access login.</p>
         <section class="section">
             <h2 class="section-title">Money</h2>
             <div class="grid">
@@ -97,7 +99,7 @@
         <section class="section">
             <h2 class="section-title">Home &amp; Vehicle</h2>
             <div class="grid">
-                <a class="ha-tile" href="https://allieha.tplinkdns.com/lovelace-voltronicn/0" aria-label="Home Assistant">
+                <a class="ha-tile" href="https://ha.badenhorstfamily.co.za/lovelace-voltronicn/0" aria-label="Home Assistant">
                     <span class="tile-icon" aria-hidden="true">
                         <!-- Minimal Home Assistant house icon with neon stroke -->
                         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,7 +111,7 @@
                         </svg>
                     </span>
                     <div class="tile-title">Home Assistant</div>
-                    <div class="tile-sub">Smart Home Dashboard</div>
+                    <div class="tile-sub">Acer tunnel to the VM</div>
                 </a>
                 <a class="colonial-tile" href="https://colonial-monitor.ajbadenhorst.workers.dev" aria-label="Colonial Monitor">
                     <span class="tile-icon" aria-hidden="true">
@@ -154,7 +156,7 @@
                         </svg>
                     </span>
                     <div class="tile-title">Overseerr</div>
-                    <div class="tile-sub">Media Requests</div>
+                    <div class="tile-sub">Acer tunnel to the Ryzen PC</div>
                 </a>
                 <a class="qb-tile" href="https://qb.badenhorstfamily.co.za">
                     <span class="tile-icon" aria-hidden="true">
@@ -168,7 +170,7 @@
                         </svg>
                     </span>
                     <div class="tile-title">qBittorrent</div>
-                    <div class="tile-sub">Torrent Client</div>
+                    <div class="tile-sub">Acer tunnel to the Ryzen PC</div>
                 </a>
             </div>
         </section>
