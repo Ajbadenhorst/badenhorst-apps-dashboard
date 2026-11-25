@@ -40,7 +40,15 @@
         .wow-tile .sub-hover{display:none}
         .wow-tile:hover .sub-default{display:none}
         .wow-tile:hover .sub-hover{display:inline;color:var(--accent);font-weight:600}
-        .note{margin:0 0 22px;padding:14px 16px;border-radius:12px;background:rgba(0,230,168,0.04);border:1px solid rgba(0,230,168,0.12);color:var(--muted);font-size:0.92rem;line-height:1.5}
+        .info{margin-top:6px;border-radius:12px;background:rgba(0,230,168,0.04);border:1px solid rgba(0,230,168,0.12);color:var(--muted)}
+        .info summary{cursor:pointer;padding:14px 16px;font-weight:600;color:#e6fef1;list-style:none}
+        .info summary::-webkit-details-marker{display:none}
+        .info summary::before{content:'▸ ';color:var(--accent)}
+        .info[open] summary::before{content:'▾ '}
+        .info-body{padding:0 16px 16px;font-size:0.92rem;line-height:1.55}
+        .info-body h3{margin:14px 0 6px;font-size:0.8rem;letter-spacing:0.5px;text-transform:uppercase;color:#e6fef1;font-weight:600}
+        .info-body p{margin:0 0 8px}
+        .info-body code{color:#e6fef1;font-size:0.88em}
         @media (max-width:420px){body{padding:16px}.brand .mark{width:40px;height:40px}}
     </style>
 </head>
@@ -61,7 +69,6 @@
                 </div>
             </div>
         </header>
-        <p class="note">Home Assistant, Overseerr, and qBittorrent open through Cloudflare Tunnel on the Acer Aspire (ab-aspire-e1-571, 192.168.10.70). The laptop has to be on the home Wi-Fi and awake. Home Assistant is the VirtualBox VM on that laptop. Overseerr and qBittorrent run on the Ryzen PC at 192.168.10.213. The tiles use the public names. A signed-out visit stops at the family Cloudflare Access login.</p>
         <section class="section">
             <h2 class="section-title">Money</h2>
             <div class="grid">
@@ -193,6 +200,21 @@
                 </a>
             </div>
         </section>
+        <details class="info">
+            <summary>Important info</summary>
+            <div class="info-body">
+                <p>Home Assistant, Overseerr, and qBittorrent open through Cloudflare Tunnel on the Acer Aspire (<code>ab-aspire-e1-571</code>, 192.168.10.70). The laptop has to be on the home Wi-Fi and awake. If a public name fails, start there.</p>
+                <h3>Home Assistant</h3>
+                <p>Public name <code>https://ha.badenhorstfamily.co.za</code>. The phone app external address is that https URL. Home Assistant is the VirtualBox VM on the Acer at 192.168.10.49. Nginx on the VM receives the tunnel on port 80.</p>
+                <p>Tunnel <code>thornvalley-homeassistant</code>. The connector is the systemd service <code>cloudflared-ha</code> on the Acer. Do not run that connector on the Mac, and do not hang Home Assistant on <code>col7-tunnel</code>.</p>
+                <p>Cloudflare Access is bypassed for this hostname only. Home Assistant’s own login is the gate. Do not use <code>ha.thornvalley.badenhorstfamily.co.za</code>. The free certificate does not cover it.</p>
+                <h3>Overseerr and qBittorrent</h3>
+                <p>Public names <code>overs.badenhorstfamily.co.za</code> and <code>qb.badenhorstfamily.co.za</code>. Both apps run on the Ryzen PC at 192.168.10.213. Overseerr is port 5055. qBittorrent is port 8000. Keep that address stable.</p>
+                <p>Tunnel <code>col7-tunnel</code> is locally managed. The live config is <code>/etc/cloudflared/config.yml</code> on the Acer, started by <code>cloudflared.service</code>. Change that file and restart the service. Dashboard edits do not apply. A signed-out visit still stops at the family Cloudflare Access login.</p>
+                <h3>Colonial Monitor</h3>
+                <p><code>colonial-monitor.ajbadenhorst.workers.dev</code> is a Cloudflare Worker. It does not run on the Acer.</p>
+            </div>
+        </details>
     </div>
 </body>
 </html>
